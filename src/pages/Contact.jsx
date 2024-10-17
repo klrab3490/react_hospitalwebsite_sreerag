@@ -1,9 +1,86 @@
-import React from 'react'
+import React from 'react';
 
 export default function Contact() {
   return (
-    <div>
-      Contact
+    <div className="container mx-auto px-4 bg-gradient-to-b from-blue-50 to-white pt-20"> {/* Added pt-20 for top padding */}
+      {/* Contact Information Section */}
+      <section id="contact-info" className="mb-10 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-gray-800">
+            Contact Information
+          </h2>
+          <p className="text-xl mb-8 text-gray-600">
+            Contact ABC Hospital for any inquiries. Our dedicated staff is here to assist you with your healthcare needs.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+              <i className="fas fa-map-marker-alt text-blue-500 text-3xl mb-4"></i>
+              <h3 className="text-xl font-semibold mb-2">Address</h3>
+              <address className="text-gray-600">123 Main Street, Onigashima, Wano Country</address>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+              <i className="fas fa-phone-alt text-blue-500 text-3xl mb-4"></i>
+              <h3 className="text-xl font-semibold mb-2">Phone</h3>
+              <a href="tel:+1234567890" className="text-blue-600 hover:underline">+123 456 7890</a>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+              <i className="fas fa-envelope text-blue-500 text-3xl mb-4"></i>
+              <h3 className="text-xl font-semibold mb-2">Email</h3>
+              <a href="mailto:info@abchospital.com" className="text-blue-600 hover:underline">info@abchospital.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Contact Form Section */}
+      <section id="contact-form" className="mb-10">
+        <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <h3 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+            Send Us a Message
+          </h3>
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-left mb-2 text-lg font-medium text-gray-700">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-left mb-2 text-lg font-medium text-gray-700">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-left mb-2 text-lg font-medium text-gray-700">
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                placeholder="Write your message"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 ease-in-out transform hover:-translate-y-1"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
-  )
+  );
 }

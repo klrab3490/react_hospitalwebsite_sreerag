@@ -30,8 +30,8 @@ const Doctors = () => {
   ];
 
   return (
-    <div className="bg-white py-16 mt-24">
-      <h2 className="text-center text-4xl font-bold mb-10 text-gray-800">Our Doctors</h2>
+    <div className="px-20 pt-5 min-h-screen">
+      <h2 className="text-center text-4xl font-bold mb-10 text-gray-800 dark:text-white">Our Doctors</h2>
       <hr className="mb-10 border-gray-300" />
 
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

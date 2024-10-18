@@ -26,7 +26,7 @@ const AppointmentForm = () => {
   };
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="min-h-[80vh]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="px-4 py-5 sm:p-6">

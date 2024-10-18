@@ -1,33 +1,39 @@
 import React from 'react';
+import { IoMdMailOpen } from "react-icons/io";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="container mx-auto px-4 bg-gradient-to-b from-blue-50 to-white pt-20"> {/* Added pt-20 for top padding */}
+    <div className="mx-auto px-4 pt-6"> {/* Added pt-20 for top padding */}
       {/* Contact Information Section */}
       <section id="contact-info" className="mb-10 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">
-            Contact Information
-          </h2>
-          <p className="text-xl mb-8 text-gray-600">
+          <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white"> Contact Information </h2>
+          <p className="text-xl mb-8 text-gray-600 dark:text-slate-400">
             Contact ABC Hospital for any inquiries. Our dedicated staff is here to assist you with your healthcare needs.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
-              <i className="fas fa-map-marker-alt text-blue-500 text-3xl mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">Address</h3>
-              <address className="text-gray-600">123 Main Street, Onigashima, Wano Country</address>
+              <div className="flex items-center gap-2 justify-center">
+                <FaMapMarkerAlt className='text-blue-500' size={28} />
+                <h3 className="text-xl font-semibold text-blue-500">Address</h3>
+              </div>
+              <address className="text-blue-500">123 Main Street, Onigashima, Wano Country</address>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
-              <i className="fas fa-phone-alt text-blue-500 text-3xl mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">Phone</h3>
+              <div className="flex items-center gap-2 justify-center">
+                <FaPhoneAlt className='text-blue-500' size={28}  />
+                <h3 className="text-xl font-semibold text-blue-500">Phone</h3>
+              </div>
               <a href="tel:+1234567890" className="text-blue-600 hover:underline">+123 456 7890</a>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
-              <i className="fas fa-envelope text-blue-500 text-3xl mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
+              <div className="flex items-center gap-2 justify-center">
+                <IoMdMailOpen className='text-blue-500' size={28}  />
+                <h3 className="text-xl font-semibold text-blue-500">Email</h3>
+              </div>
               <a href="mailto:info@abchospital.com" className="text-blue-600 hover:underline">info@abchospital.com</a>
-            </div>
+              </div>
           </div>
         </div>
       </section>

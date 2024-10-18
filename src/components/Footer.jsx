@@ -3,8 +3,8 @@ import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white text-center py-6">
-      <div className="container mx-auto">
+    <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white text-center h-24 flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center">
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 mb-4">
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition duration-300">

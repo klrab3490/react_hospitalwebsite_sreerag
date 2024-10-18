@@ -1,108 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { RiCloseLine, RiMenu5Line } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const location = useLocation(); // Get current route
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 p-2 w-full">
-      <div className="container mx-auto px-4">
+    <div>
+      <nav className="bg-gray-800 px-2 sm:px-4 md:px-6 w-full h-24 flex justify-between items-center">
         {/* Navbar brand centered */}
-        <div className="flex justify-center items-center">
-          <h1 className="text-white text-2xl font-bold">ABC Hospital</h1>
-        </div>
+        <h1 className="text-white text-4xl font-bold">ABC Hospital</h1>
 
         {/* Navbar toggle button */}
-        <button
-          className="block md:hidden text-white focus:outline-none"
-          type="button"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
+        <button className="lg:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <RiCloseLine size={28} /> : <RiMenu5Line size={24} />}
         </button>
 
         {/* Navbar links */}
-        <div className="hidden md:flex justify-center" id="navbarNav">
-          <ul className="flex space-x-4">
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/' ? 'bg-gray-900' : ''
-                }`}
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/about' ? 'bg-gray-900' : ''
-                }`}
-                to="/about"
-              >
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/booking' ? 'bg-gray-900' : ''
-                }`}
-                to="/booking"
-              >
-                Booking
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/doctors' ? 'bg-gray-900' : ''
-                }`}
-                to="/doctors"
-              >
-                Doctors
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/department' ? 'bg-gray-900' : ''
-                }`}
-                to="/department"
-              >
-                Departments
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  location.pathname === '/contact' ? 'bg-gray-900' : ''
-                }`}
-                to="/contact"
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+        <ul className="hidden lg:flex flex-wrap gap-2 max-w-[700px]">
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/" > Home </Link>
+          </li>
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/about' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/about" > About </Link>
+          </li>
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/booking' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/booking" > Booking </Link>
+          </li>
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/doctors' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/doctors" > Doctors </Link>
+          </li>
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/department' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/department" > Departments </Link>
+          </li>
+          <li className="nav-item">
+            <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/contact' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/contact" > Contact Us </Link>
+          </li>
+        </ul>
+      </nav>
+      {isOpen && (
+        <div className='z-10 h-full w-full bg-gray-800 px-4 pb-6'>
+          <div className='flex flex-wrap justify-center items-center h-full transform transition-transform duration-300 ease-in-out'>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/" > Home </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/about' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/about" > About </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/booking' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/booking" > Booking </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/doctors' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/doctors" > Doctors </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/department' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/department" > Departments </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/contact' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/contact" > Contact Us </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </div>
   );
 };
 

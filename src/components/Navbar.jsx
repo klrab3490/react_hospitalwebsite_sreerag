@@ -19,7 +19,7 @@ const Navbar = () => {
 
         {/* Navbar links */}
         {location.pathname !== '/admin' && (
-          <ul className="hidden lg:flex flex-wrap gap-2 max-w-[700px]">
+          <ul className="hidden lg:flex flex-wrap gap-2 max-w-[750px]">
             <li className="nav-item">
               <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/' ? 'bg-gray-900 dark:bg-slate-600' : ''}`} to="/"> Home </Link>
             </li>

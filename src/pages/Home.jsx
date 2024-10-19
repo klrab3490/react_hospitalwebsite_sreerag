@@ -1,7 +1,10 @@
 import React from 'react';
 import SliderImage from '../components/SliderImage';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigator = useNavigate();
+
     return (
         <div className="pt-4">
             {/* Slideshow Section */}
@@ -30,7 +33,7 @@ const Home = () => {
             <div className="assistance text-center py-12 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
                 <h2 className="text-3xl font-bold mb-4">Need Assistance?</h2>
                 <p className="text-lg">Contact us for any inquiries or to schedule an appointment.</p>
-                <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">Get in Touch</button>
+                <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300" onClick={() => navigator("/contact")}>Get in Touch</button>
             </div>
         </div>
     );

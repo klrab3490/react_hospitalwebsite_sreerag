@@ -13,15 +13,16 @@ import Footer from './components/Footer';  // Ensure Footer is imported
 function App() {
   return (
     <div className='flex flex-col'>
-      <div className="h-28">
+      <div className="h-24">
         <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
           <Navbar />
         </div>
       </div>
       
-      <div style={{ minHeight: 'calc(100vh - 208px)' }}>
+      <div style={{ minHeight: 'calc(100vh - 192px)' }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />

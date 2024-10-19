@@ -38,6 +38,9 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/contact' ? 'bg-gray-900 dark:bg-slate-600' : ''}`} to="/contact"> Contact Us </Link>
             </li>
+            <li className="nav-item">
+              <Link className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/admin' ? 'bg-gray-900 dark:bg-slate-600' : ''}`} to="/admin"> Login </Link>
+            </li>
           </ul>
         )}
       </nav>
@@ -50,6 +53,7 @@ const Navbar = () => {
             <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/doctors' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/doctors" > Doctors </Link>
             <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/department' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/department" > Departments </Link>
             <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/contact' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/contact" > Contact Us </Link>
+            <Link onClick={() => setIsOpen(!isOpen)} className={`text-white p-3 rounded-md text-xl font-medium ${location.pathname === '/admin' ? 'bg-gray-900 dark:bg-slate-600' : '' }`} to="/admin" > Login </Link>
           </div>
         </div>
       )}

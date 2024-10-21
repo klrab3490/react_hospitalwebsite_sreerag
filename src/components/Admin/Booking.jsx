@@ -8,10 +8,19 @@ export default function AdminBooking() {
     const [data, setData] = useState([]);
 
     const fetchData = async () => {
-        const bookingRef = collection(db, 'bookings');
+        const bookingRef = collection(db, 'booking');
         const snapshot = await getDocs(bookingRef);
         const bookingList = snapshot.docs.map(doc => doc.data());
         setData(bookingList);
+    }
+
+    const deleteData = async () => {
+        try {
+            await deleteDoc(doc(db, 'booking', id));
+        } catch (error) {
+            console.log(error);
+        }
+        fetchData();
     }
 
     useEffect(() => {
@@ -38,15 +47,15 @@ export default function AdminBooking() {
                     <tbody>
                         {data.map((booking, index) => (
                             <tr key={index}>
-                                <td className='border p-2'>{booking.fullName}</td>
+                                <td className='border p-2'>{booking.name}</td>
                                 <td className='border p-2'>{booking.email}</td>
-                                <td className='border p-2'>{booking.phoneNumber}</td>
-                                <td className='border p-2'>{booking.preferredDate}</td>
-                                <td className='border p-2'>{booking.preferredTime}</td>
+                                <td className='border p-2'>{booking.phone}</td>
+                                <td className='border p-2'>{booking.date}</td>
+                                <td className='border p-2'>{booking.time}</td>
                                 <td className='border p-2'>{booking.department}</td>
-                                <td className='border p-2'>{booking.additionalMessage}</td>
+                                <td className='border p-2'>{booking.message}</td>
                                 <td className='border p-2'>
-                                    <button className='bg-red-500 text-white p-2 rounded-md'>Delete</button>
+                                    <button className='bg-red-500 text-white p-2 rounded-md' onClick={() => deleteData(booking.id)}>Delete</button>
                                 </td>
                             </tr>
                         ))}

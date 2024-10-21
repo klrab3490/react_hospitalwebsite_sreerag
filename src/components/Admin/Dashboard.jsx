@@ -10,7 +10,7 @@ export default function AdminDashboard() {
 
     const getCount = async () => {
         const docRef = collection(db, 'doctors');
-        const patRef = collection(db, 'patients');
+        const patRef = collection(db, 'booking');
 
         const docSnap = await getDocs(docRef);
         const patSnap = await getDocs(patRef);

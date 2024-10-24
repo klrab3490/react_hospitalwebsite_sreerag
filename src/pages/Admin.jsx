@@ -6,6 +6,7 @@ import { auth } from "../config/firebaseConfig";
 import AdminBooking from "../components/Admin/Booking";
 import AdminDashboard from "../components/Admin/Dashboard";
 import AdminDoctor from "../components/Admin/Doctor";
+import AdminContact from "../components/Admin/messages";
 import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
@@ -61,6 +62,7 @@ export default function Admin() {
                 <button onClick={() => setActiveTab("dashboard")} className={`p-2 sm:px-4 text-center hover:bg-green-700 hover:text-xl hover:rounded-xl ${activeTab === "dashboard" ? 'bg-green-600 font-bold text-xl rounded-xl underline' : 'text-white'}`}>Dashboard</button>
                 <button onClick={() => setActiveTab("doctors") }  className={`p-2 sm:px-4 text-center hover:bg-green-700 hover:text-xl hover:rounded-xl ${activeTab === "doctors" ? 'bg-green-600 font-bold text-xl rounded-xl underline' : 'text-white'}`}>Doctors</button>
                 <button onClick={() => setActiveTab("patients") } className={`p-2 sm:px-4 text-center hover:bg-green-700 hover:text-xl hover:rounded-xl ${activeTab === "patients" ? 'bg-green-600 font-bold text-xl rounded-xl underline' : 'text-white'}`}>Bookings</button>
+                <button onClick={() => setActiveTab("messages") } className={`p-2 sm:px-4 text-center hover:bg-green-700 hover:text-xl hover:rounded-xl ${activeTab === "messages" ? 'bg-green-600 font-bold text-xl rounded-xl underline' : 'text-white'}`}>Messages</button>
               </div>
               <button onClick={logout} className="rounded-xl p-2 sm:px-4 font-bold text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-500">Logout</button>
             </div>
@@ -68,6 +70,8 @@ export default function Admin() {
               {activeTab === "dashboard" && <AdminDashboard /> }
               {activeTab === "doctors" && <AdminDoctor /> }
               {activeTab === "patients" && <AdminBooking /> }
+              {activeTab === "messages" && <AdminContact /> }
+
             </div>
           </div>
         </div>
